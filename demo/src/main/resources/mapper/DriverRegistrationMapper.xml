@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.DriverRegistrationMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.entity.DriverRegistration">
+    <id column="ID" jdbcType="BIGINT" property="id" />
+    <result column="CREATED_BY" jdbcType="VARCHAR" property="createdBy" />
+    <result column="CREATION_TIME" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="LAST_UPDATE_TIME" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="UPDATED_BY" jdbcType="VARCHAR" property="updatedBy" />
+    <result column="VERSION" jdbcType="BIGINT" property="version" />
+    <result column="AUDIT_TIME" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="AUDITOR" jdbcType="VARCHAR" property="auditor" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="CREATER" jdbcType="VARCHAR" property="creater" />
+    <result column="EXPIRE_DATE" jdbcType="TIMESTAMP" property="expireDate" />
+    <result column="EFFECTIVE_FLAG" jdbcType="BIT" property="effectiveFlag" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="APP_USER_ID" jdbcType="VARCHAR" property="appUserId" />
+    <result column="DRIVER_CODE" jdbcType="VARCHAR" property="driverCode" />
+    <result column="DRIVER_NAME" jdbcType="VARCHAR" property="driverName" />
+    <result column="GENDER" jdbcType="VARCHAR" property="gender" />
+    <result column="IDENTITY_CARD_ADDRESS" jdbcType="VARCHAR" property="identityCardAddress" />
+    <result column="IDENTITY_CARD_NO" jdbcType="VARCHAR" property="identityCardNo" />
+    <result column="MOBILE_PHONE" jdbcType="VARCHAR" property="mobilePhone" />
+    <result column="PHONE" jdbcType="VARCHAR" property="phone" />
+    <result column="WEIXIN_OPEN_ID" jdbcType="VARCHAR" property="weixinOpenId" />
+    <result column="PORT_ID" jdbcType="BIGINT" property="portId" />
+    <result column="STATUS_ID" jdbcType="VARCHAR" property="statusId" />
+    <result column="COMPANY_ID" jdbcType="BIGINT" property="companyId" />
+    <result column="EQ_SYNC_FLAG" jdbcType="VARCHAR" property="eqSyncFlag" />
+    <result column="SQ_SYNC_FLAG" jdbcType="VARCHAR" property="sqSyncFlag" />
+    <result column="SYNC_STATUS" jdbcType="VARCHAR" property="syncStatus" />
+    <result column="YQ_SYNC_FLAG" jdbcType="VARCHAR" property="yqSyncFlag" />
+    <result column="IDENTITY_CARD_PIC" jdbcType="BIGINT" property="identityCardPic" />
+    <result column="IDENTITY_CARD_PIC1" jdbcType="BIGINT" property="identityCardPic1" />
+    <result column="REJECT_REASON" jdbcType="VARCHAR" property="rejectReason" />
+    <result column="DRIVING_LICENSE_EFFECTIVE_DATE" jdbcType="TIMESTAMP" property="drivingLicenseEffectiveDate" />
+    <result column="IDENTITY_CARD_EFFECTIVE_DATE" jdbcType="TIMESTAMP" property="identityCardEffectiveDate" />
+    <result column="PAY_COMPLETE_TIME" jdbcType="TIMESTAMP" property="payCompleteTime" />
+    <result column="PAY_TIME" jdbcType="TIMESTAMP" property="payTime" />
+    <result column="PAY_UNIQUE_NO" jdbcType="VARCHAR" property="payUniqueNo" />
+    <result column="PAY_STATUS" jdbcType="VARCHAR" property="payStatus" />
+    <result column="PAYER" jdbcType="VARCHAR" property="payer" />
+    <result column="AGE" jdbcType="INTEGER" property="age" />
+    <result column="DRIVING_LICENSE_INITIAL_GET_DATE" jdbcType="TIMESTAMP" property="drivingLicenseInitialGetDate" />
+    <result column="DRIVING_TIME" jdbcType="INTEGER" property="drivingTime" />
+    <result column="CAPACITY_TRUCK_ID" jdbcType="BIGINT" property="capacityTruckId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from driver_registration
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.example.demo.entity.DriverRegistration">
+    insert into driver_registration (ID, CREATED_BY, CREATION_TIME, 
+      LAST_UPDATE_TIME, UPDATED_BY, VERSION, 
+      AUDIT_TIME, AUDITOR, CREATE_TIME, 
+      CREATER, EXPIRE_DATE, EFFECTIVE_FLAG, 
+      REMARK, APP_USER_ID, DRIVER_CODE, 
+      DRIVER_NAME, GENDER, IDENTITY_CARD_ADDRESS, 
+      IDENTITY_CARD_NO, MOBILE_PHONE, PHONE, 
+      WEIXIN_OPEN_ID, PORT_ID, STATUS_ID, 
+      COMPANY_ID, EQ_SYNC_FLAG, SQ_SYNC_FLAG, 
+      SYNC_STATUS, YQ_SYNC_FLAG, IDENTITY_CARD_PIC, 
+      IDENTITY_CARD_PIC1, REJECT_REASON, DRIVING_LICENSE_EFFECTIVE_DATE, 
+      IDENTITY_CARD_EFFECTIVE_DATE, PAY_COMPLETE_TIME, 
+      PAY_TIME, PAY_UNIQUE_NO, PAY_STATUS, 
+      PAYER, AGE, DRIVING_LICENSE_INITIAL_GET_DATE, 
+      DRIVING_TIME, CAPACITY_TRUCK_ID)
+    values (#{id,jdbcType=BIGINT}, #{createdBy,jdbcType=VARCHAR}, #{creationTime,jdbcType=TIMESTAMP}, 
+      #{lastUpdateTime,jdbcType=TIMESTAMP}, #{updatedBy,jdbcType=VARCHAR}, #{version,jdbcType=BIGINT}, 
+      #{auditTime,jdbcType=TIMESTAMP}, #{auditor,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{creater,jdbcType=VARCHAR}, #{expireDate,jdbcType=TIMESTAMP}, #{effectiveFlag,jdbcType=BIT}, 
+      #{remark,jdbcType=VARCHAR}, #{appUserId,jdbcType=VARCHAR}, #{driverCode,jdbcType=VARCHAR}, 
+      #{driverName,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, #{identityCardAddress,jdbcType=VARCHAR}, 
+      #{identityCardNo,jdbcType=VARCHAR}, #{mobilePhone,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{weixinOpenId,jdbcType=VARCHAR}, #{portId,jdbcType=BIGINT}, #{statusId,jdbcType=VARCHAR}, 
+      #{companyId,jdbcType=BIGINT}, #{eqSyncFlag,jdbcType=VARCHAR}, #{sqSyncFlag,jdbcType=VARCHAR}, 
+      #{syncStatus,jdbcType=VARCHAR}, #{yqSyncFlag,jdbcType=VARCHAR}, #{identityCardPic,jdbcType=BIGINT}, 
+      #{identityCardPic1,jdbcType=BIGINT}, #{rejectReason,jdbcType=VARCHAR}, #{drivingLicenseEffectiveDate,jdbcType=TIMESTAMP}, 
+      #{identityCardEffectiveDate,jdbcType=TIMESTAMP}, #{payCompleteTime,jdbcType=TIMESTAMP}, 
+      #{payTime,jdbcType=TIMESTAMP}, #{payUniqueNo,jdbcType=VARCHAR}, #{payStatus,jdbcType=VARCHAR}, 
+      #{payer,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{drivingLicenseInitialGetDate,jdbcType=TIMESTAMP}, 
+      #{drivingTime,jdbcType=INTEGER}, #{capacityTruckId,jdbcType=BIGINT})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.example.demo.entity.DriverRegistration">
+    update driver_registration
+    set CREATED_BY = #{createdBy,jdbcType=VARCHAR},
+      CREATION_TIME = #{creationTime,jdbcType=TIMESTAMP},
+      LAST_UPDATE_TIME = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      UPDATED_BY = #{updatedBy,jdbcType=VARCHAR},
+      VERSION = #{version,jdbcType=BIGINT},
+      AUDIT_TIME = #{auditTime,jdbcType=TIMESTAMP},
+      AUDITOR = #{auditor,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      CREATER = #{creater,jdbcType=VARCHAR},
+      EXPIRE_DATE = #{expireDate,jdbcType=TIMESTAMP},
+      EFFECTIVE_FLAG = #{effectiveFlag,jdbcType=BIT},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      APP_USER_ID = #{appUserId,jdbcType=VARCHAR},
+      DRIVER_CODE = #{driverCode,jdbcType=VARCHAR},
+      DRIVER_NAME = #{driverName,jdbcType=VARCHAR},
+      GENDER = #{gender,jdbcType=VARCHAR},
+      IDENTITY_CARD_ADDRESS = #{identityCardAddress,jdbcType=VARCHAR},
+      IDENTITY_CARD_NO = #{identityCardNo,jdbcType=VARCHAR},
+      MOBILE_PHONE = #{mobilePhone,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      WEIXIN_OPEN_ID = #{weixinOpenId,jdbcType=VARCHAR},
+      PORT_ID = #{portId,jdbcType=BIGINT},
+      STATUS_ID = #{statusId,jdbcType=VARCHAR},
+      COMPANY_ID = #{companyId,jdbcType=BIGINT},
+      EQ_SYNC_FLAG = #{eqSyncFlag,jdbcType=VARCHAR},
+      SQ_SYNC_FLAG = #{sqSyncFlag,jdbcType=VARCHAR},
+      SYNC_STATUS = #{syncStatus,jdbcType=VARCHAR},
+      YQ_SYNC_FLAG = #{yqSyncFlag,jdbcType=VARCHAR},
+      IDENTITY_CARD_PIC = #{identityCardPic,jdbcType=BIGINT},
+      IDENTITY_CARD_PIC1 = #{identityCardPic1,jdbcType=BIGINT},
+      REJECT_REASON = #{rejectReason,jdbcType=VARCHAR},
+      DRIVING_LICENSE_EFFECTIVE_DATE = #{drivingLicenseEffectiveDate,jdbcType=TIMESTAMP},
+      IDENTITY_CARD_EFFECTIVE_DATE = #{identityCardEffectiveDate,jdbcType=TIMESTAMP},
+      PAY_COMPLETE_TIME = #{payCompleteTime,jdbcType=TIMESTAMP},
+      PAY_TIME = #{payTime,jdbcType=TIMESTAMP},
+      PAY_UNIQUE_NO = #{payUniqueNo,jdbcType=VARCHAR},
+      PAY_STATUS = #{payStatus,jdbcType=VARCHAR},
+      PAYER = #{payer,jdbcType=VARCHAR},
+      AGE = #{age,jdbcType=INTEGER},
+      DRIVING_LICENSE_INITIAL_GET_DATE = #{drivingLicenseInitialGetDate,jdbcType=TIMESTAMP},
+      DRIVING_TIME = #{drivingTime,jdbcType=INTEGER},
+      CAPACITY_TRUCK_ID = #{capacityTruckId,jdbcType=BIGINT}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select ID, CREATED_BY, CREATION_TIME, LAST_UPDATE_TIME, UPDATED_BY, VERSION, AUDIT_TIME, 
+    AUDITOR, CREATE_TIME, CREATER, EXPIRE_DATE, EFFECTIVE_FLAG, REMARK, APP_USER_ID, 
+    DRIVER_CODE, DRIVER_NAME, GENDER, IDENTITY_CARD_ADDRESS, IDENTITY_CARD_NO, MOBILE_PHONE, 
+    PHONE, WEIXIN_OPEN_ID, PORT_ID, STATUS_ID, COMPANY_ID, EQ_SYNC_FLAG, SQ_SYNC_FLAG, 
+    SYNC_STATUS, YQ_SYNC_FLAG, IDENTITY_CARD_PIC, IDENTITY_CARD_PIC1, REJECT_REASON, 
+    DRIVING_LICENSE_EFFECTIVE_DATE, IDENTITY_CARD_EFFECTIVE_DATE, PAY_COMPLETE_TIME, 
+    PAY_TIME, PAY_UNIQUE_NO, PAY_STATUS, PAYER, AGE, DRIVING_LICENSE_INITIAL_GET_DATE, 
+    DRIVING_TIME, CAPACITY_TRUCK_ID
+    from driver_registration
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ID, CREATED_BY, CREATION_TIME, LAST_UPDATE_TIME, UPDATED_BY, VERSION, AUDIT_TIME, 
+    AUDITOR, CREATE_TIME, CREATER, EXPIRE_DATE, EFFECTIVE_FLAG, REMARK, APP_USER_ID, 
+    DRIVER_CODE, DRIVER_NAME, GENDER, IDENTITY_CARD_ADDRESS, IDENTITY_CARD_NO, MOBILE_PHONE, 
+    PHONE, WEIXIN_OPEN_ID, PORT_ID, STATUS_ID, COMPANY_ID, EQ_SYNC_FLAG, SQ_SYNC_FLAG, 
+    SYNC_STATUS, YQ_SYNC_FLAG, IDENTITY_CARD_PIC, IDENTITY_CARD_PIC1, REJECT_REASON, 
+    DRIVING_LICENSE_EFFECTIVE_DATE, IDENTITY_CARD_EFFECTIVE_DATE, PAY_COMPLETE_TIME, 
+    PAY_TIME, PAY_UNIQUE_NO, PAY_STATUS, PAYER, AGE, DRIVING_LICENSE_INITIAL_GET_DATE, 
+    DRIVING_TIME, CAPACITY_TRUCK_ID
+    from driver_registration
+  </select>
+</mapper>

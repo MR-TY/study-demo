@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.StormOrderMatchingMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.entity.StormOrderMatching">
+    <id column="ID" jdbcType="BIGINT" property="id" />
+    <result column="CREATED_BY" jdbcType="VARCHAR" property="createdBy" />
+    <result column="CREATION_TIME" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="LAST_UPDATE_TIME" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="UPDATED_BY" jdbcType="VARCHAR" property="updatedBy" />
+    <result column="VERSION" jdbcType="BIGINT" property="version" />
+    <result column="BL_NO" jdbcType="VARCHAR" property="blNo" />
+    <result column="ER_CHEHNG_BL_NO" jdbcType="VARCHAR" property="erChehngBlNo" />
+    <result column="LOAD_SPLIT_PACK_POINT" jdbcType="VARCHAR" property="loadSplitPackPoint" />
+    <result column="LOAD_SPLIT_PACK_PORT" jdbcType="VARCHAR" property="loadSplitPackPort" />
+    <result column="NUMBER" jdbcType="VARCHAR" property="number" />
+    <result column="PAYED_COST" jdbcType="DECIMAL" property="payedCost" />
+    <result column="PLAN_ARRIVAL_TIME" jdbcType="TIMESTAMP" property="planArrivalTime" />
+    <result column="POINT_TO_PORT_DISTANCE" jdbcType="DECIMAL" property="pointToPortDistance" />
+    <result column="SIZE_TYPE" jdbcType="VARCHAR" property="sizeType" />
+    <result column="TRUCK_ORDER_TONTAINER_ID" jdbcType="BIGINT" property="truckOrderTontainerId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from storm_order_matching
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.example.demo.entity.StormOrderMatching">
+    insert into storm_order_matching (ID, CREATED_BY, CREATION_TIME, 
+      LAST_UPDATE_TIME, UPDATED_BY, VERSION, 
+      BL_NO, ER_CHEHNG_BL_NO, LOAD_SPLIT_PACK_POINT, 
+      LOAD_SPLIT_PACK_PORT, NUMBER, PAYED_COST, 
+      PLAN_ARRIVAL_TIME, POINT_TO_PORT_DISTANCE, 
+      SIZE_TYPE, TRUCK_ORDER_TONTAINER_ID)
+    values (#{id,jdbcType=BIGINT}, #{createdBy,jdbcType=VARCHAR}, #{creationTime,jdbcType=TIMESTAMP}, 
+      #{lastUpdateTime,jdbcType=TIMESTAMP}, #{updatedBy,jdbcType=VARCHAR}, #{version,jdbcType=BIGINT}, 
+      #{blNo,jdbcType=VARCHAR}, #{erChehngBlNo,jdbcType=VARCHAR}, #{loadSplitPackPoint,jdbcType=VARCHAR}, 
+      #{loadSplitPackPort,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR}, #{payedCost,jdbcType=DECIMAL}, 
+      #{planArrivalTime,jdbcType=TIMESTAMP}, #{pointToPortDistance,jdbcType=DECIMAL}, 
+      #{sizeType,jdbcType=VARCHAR}, #{truckOrderTontainerId,jdbcType=BIGINT})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.example.demo.entity.StormOrderMatching">
+    update storm_order_matching
+    set CREATED_BY = #{createdBy,jdbcType=VARCHAR},
+      CREATION_TIME = #{creationTime,jdbcType=TIMESTAMP},
+      LAST_UPDATE_TIME = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      UPDATED_BY = #{updatedBy,jdbcType=VARCHAR},
+      VERSION = #{version,jdbcType=BIGINT},
+      BL_NO = #{blNo,jdbcType=VARCHAR},
+      ER_CHEHNG_BL_NO = #{erChehngBlNo,jdbcType=VARCHAR},
+      LOAD_SPLIT_PACK_POINT = #{loadSplitPackPoint,jdbcType=VARCHAR},
+      LOAD_SPLIT_PACK_PORT = #{loadSplitPackPort,jdbcType=VARCHAR},
+      NUMBER = #{number,jdbcType=VARCHAR},
+      PAYED_COST = #{payedCost,jdbcType=DECIMAL},
+      PLAN_ARRIVAL_TIME = #{planArrivalTime,jdbcType=TIMESTAMP},
+      POINT_TO_PORT_DISTANCE = #{pointToPortDistance,jdbcType=DECIMAL},
+      SIZE_TYPE = #{sizeType,jdbcType=VARCHAR},
+      TRUCK_ORDER_TONTAINER_ID = #{truckOrderTontainerId,jdbcType=BIGINT}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select ID, CREATED_BY, CREATION_TIME, LAST_UPDATE_TIME, UPDATED_BY, VERSION, BL_NO, 
+    ER_CHEHNG_BL_NO, LOAD_SPLIT_PACK_POINT, LOAD_SPLIT_PACK_PORT, NUMBER, PAYED_COST, 
+    PLAN_ARRIVAL_TIME, POINT_TO_PORT_DISTANCE, SIZE_TYPE, TRUCK_ORDER_TONTAINER_ID
+    from storm_order_matching
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ID, CREATED_BY, CREATION_TIME, LAST_UPDATE_TIME, UPDATED_BY, VERSION, BL_NO, 
+    ER_CHEHNG_BL_NO, LOAD_SPLIT_PACK_POINT, LOAD_SPLIT_PACK_PORT, NUMBER, PAYED_COST, 
+    PLAN_ARRIVAL_TIME, POINT_TO_PORT_DISTANCE, SIZE_TYPE, TRUCK_ORDER_TONTAINER_ID
+    from storm_order_matching
+  </select>
+</mapper>
