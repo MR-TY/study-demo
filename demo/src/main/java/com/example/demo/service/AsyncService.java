@@ -55,4 +55,15 @@ public class AsyncService {
         }
     }
 
+    @Async("taskExecutor")
+    public void registerAsync() {
+        logger.info("注册多线程"+ Thread.currentThread());
+        try {
+            Thread.sleep(1000 * 1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        logger.info("注册多线程成功");
+    }
+
 }

@@ -27,4 +27,11 @@ public class AsyncController {
     public void testScope1() {
         asyncService.register1();
     }
+
+    @RequestMapping("/testAsync2")
+    public void testScope2() {
+        for (int i = 0; i < 10; i++) {
+            asyncService.registerAsync();
+        }
+    }
 }
