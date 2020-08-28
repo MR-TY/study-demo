@@ -45,7 +45,7 @@ public class ScrewTest {
         //生成配置
         EngineConfig engineConfig = EngineConfig.builder()
                 //生成文件路径 注意这里也要切换到自己的数据源
-                .fileOutputDir("C:\\Users\\xiao-ming\\Desktop\\数据库data测试")
+                .fileOutputDir("C:\\Users\\xiao-ming\\Desktop\\数据库data测试\\1")
                 //打开目录
                 .openOutputDir(false)
                 //文件类型  注意此处这里看你想要生成什么格式，共有三种格式，word，MD，html
@@ -63,8 +63,10 @@ public class ScrewTest {
         //忽略表后缀
         ArrayList<String> ignoreSuffix = new ArrayList<>();
         ignoreSuffix.add("_test");
+        // 生成的表名字
         ArrayList<String> tableName = new ArrayList<>();
-        //tableName.add("storm_order_matching");
+        tableName.add("storm_order_matching");
+        tableName.add("user");
         ProcessConfig processConfig = ProcessConfig.builder()
                 //指定生成逻辑、当存在指定表、指定表前缀、指定表后缀时，将生成指定表，其余表不生成、并跳过忽略表配置
                 //根据名称指定表生成
